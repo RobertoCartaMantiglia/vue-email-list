@@ -24,13 +24,13 @@ createApp({
             .then( (response) =>{
                 this.randomEmail = response.data.response;
                 console.log(this.randomEmail)
-                this.emails.push(response.data.response);
+                this.emails.push(this.randomEmail);
             });
            
     },
    
   },
-  created () {
+  created () {       //inserita la funzione getRandomEmail() in un ciclo for per farla attuare 10 volte
     for(let i=0; i<10; i++){
         this.getRandomEmail();
     }
