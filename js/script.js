@@ -13,6 +13,11 @@ createApp({
     return {
       message: 'Hello Vue!'
     }
+  },
+  methods : {
+    getRandomEmail(){
+        
+    }
   }
 }).mount('#app')
 
@@ -21,4 +26,4 @@ axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
     .then( function(response){
         const result = response.data;
         console.log(result)
-    })
+    });
