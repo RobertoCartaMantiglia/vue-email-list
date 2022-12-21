@@ -24,25 +24,17 @@ createApp({
             .then( (response) =>{
                 this.randomEmail = response.data.response;
                 console.log(this.randomEmail)
+                this.emails.push(response.data.response);
             });
            
     },
-    addRandomEmail(){
-        let email = {
-            text: this.randomEmail,
-        };
-        if(this.randomEmail != ''){
-            this.emails.push(this.email);
-            console.log(this.emails);
-        }
-    }
+   
   },
   created () {
-    this.getRandomEmail(){
-        for(let i=0; i<10; i++){
-            this.addRandomEmail;
-        }
+    for(let i=0; i<10; i++){
+        this.getRandomEmail();
     }
+    
   },
 }).mount('#app')
 
