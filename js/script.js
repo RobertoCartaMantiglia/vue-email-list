@@ -11,17 +11,28 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+        activeIndex: 0,
       randomEmail: 'null',
+      emails: [
+
+      ],
     }
   },
   methods : {
     getRandomEmail(){
+        let email = {
+            text: this.randomEmail,
+        }
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(  (response) =>{        //usata arrow function in quanto conserva il valore di this
+            .then( (response) =>{
+                console.log(response.data.response)
                 this.randomEmail = response.data.response;
                 console.log(this.randomEmail)
-                               
             });
+            if(this.randomEmail != ''){
+                this.emails.push(this.email);
+                console.log(this.emails)
+            }
     }
   },
   created () {
