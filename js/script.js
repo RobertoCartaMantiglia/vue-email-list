@@ -17,10 +17,10 @@ createApp({
   methods : {
     getRandomEmail(){
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(  (response) =>{
+            .then(  (response) =>{        //usata arrow function in quanto conserva il valore di this
                 this.randomEmail = response.data.response;
                 console.log(this.randomEmail)
-                
+                               
             });
     }
   },
