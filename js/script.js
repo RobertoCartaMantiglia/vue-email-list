@@ -19,20 +19,22 @@ createApp({
     }
   },
   methods : {
-    getRandomEmail(){
-        let email = {
-            text: this.randomEmail,
-        }
+    getRandomEmail(){        
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then( (response) =>{
-                console.log(response.data.response)
                 this.randomEmail = response.data.response;
                 console.log(this.randomEmail)
             });
-            if(this.randomEmail != ''){
-                this.emails.push(this.email);
-                console.log(this.emails)
-            }
+           
+    },
+    addRandomEmail(){
+        let email = {
+            text: this.randomEmail,
+        };
+        if(this.randomEmail != ''){
+            this.emails.push(this.email);
+            console.log(this.emails);
+        }
     }
   },
   created () {
