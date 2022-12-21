@@ -12,8 +12,8 @@ createApp({
   data() {
     return {
         activeIndex: 0,
-      randomEmail: 'null',
-      emails: [
+        randomEmail: 'null',
+        emails: [
 
       ],
     }
@@ -38,7 +38,11 @@ createApp({
     }
   },
   created () {
-    this.getRandomEmail()
+    this.getRandomEmail(){
+        for(let i=0; i<10; i++){
+            this.addRandomEmail;
+        }
+    }
   },
 }).mount('#app')
 
